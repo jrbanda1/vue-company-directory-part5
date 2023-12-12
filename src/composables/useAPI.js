@@ -17,7 +17,7 @@ const api = axios.create({
 
 const getEmployees = async () => {
   loading.value = true
-  const { data, headers } = await api.get('/api/departments', {
+  const { data, headers } = await api.get('/api/employees', {
     params: {
       page: activePage.value,
       size: pageSize.value,
@@ -34,15 +34,7 @@ const getDepartment = async (departmentId) => {
 }
 
 const useAPI = () => {
-  return {
-    employees,
-    pages,
-    activePage,
-    loading,
-    pageSize,
-    getEmployees,
-    getDepartment,
-  }
+  return { employees, pages, activePage, loading, pageSize, getEmployees, getDepartment }
 }
 
 export default useAPI
